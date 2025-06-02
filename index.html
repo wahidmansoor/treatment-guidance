@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Treatment Guidance System</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Treatment Guidance System</h1>
+
+    <section>
+      <label for="cancerType">Cancer Type:</label>
+      <select id="cancerType">
+        <option value="">Select...</option>
+        <option value="Breast Cancer">Breast Cancer</option>
+        <option value="Colorectal Cancer">Colorectal Cancer</option>
+        <option value="Lung Cancer">Lung Cancer</option>
+      </select>
+    </section>
+
+    <section id="markerSection" style="display: none;">
+      <p>Molecular Markers:</p>
+      <div id="markersContainer"></div>
+    </section>
+
+    <section>
+      <label for="stage">Stage:</label>
+      <select id="stage">
+        <option value="">Select Stage</option>
+        <option>Stage I</option>
+        <option>Stage II</option>
+        <option>Stage III</option>
+        <option>Stage IV</option>
+      </select>
+    </section>
+
+    <section>
+      <label for="intent">Treatment Intent:</label>
+      <select id="intent">
+        <option value="">Select Intent</option>
+        <option>Curative</option>
+        <option>Adjuvant</option>
+        <option>Neoadjuvant</option>
+        <option>Palliative</option>
+      </select>
+    </section>
+
+    <section>
+      <label for="ihc">IHC Markers (comma separated):</label>
+      <input id="ihc" placeholder="e.g. ER, PR, HER2"/>
+    </section>
+
+    <section>
+      <label for="tumor">Tumor Markers (comma separated):</label>
+      <input id="tumor" placeholder="e.g. CEA:10, CA-125:35"/>
+    </section>
+
+    <div class="buttons">
+      <button onclick="saveData()">💾 Save</button>
+      <button onclick="loadData()">📂 Load</button>
+      <button onclick="clearData()">🧹 Clear</button>
+      <button onclick="generateRecommendations()">🚀 Generate</button>
+    </div>
+
+    <div id="output" class="output-box"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
